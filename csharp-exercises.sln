@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewGradeBookDict", "NewGrad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Max", "Max\Max.csproj", "{50A6E269-84CA-4B4B-A976-3D0484DA5D79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleArea", "CircleArea\CircleArea.csproj", "{D6412BB9-6D72-486A-A51E-B687E6ED33BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{50A6E269-84CA-4B4B-A976-3D0484DA5D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50A6E269-84CA-4B4B-A976-3D0484DA5D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50A6E269-84CA-4B4B-A976-3D0484DA5D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6412BB9-6D72-486A-A51E-B687E6ED33BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6412BB9-6D72-486A-A51E-B687E6ED33BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6412BB9-6D72-486A-A51E-B687E6ED33BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6412BB9-6D72-486A-A51E-B687E6ED33BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
