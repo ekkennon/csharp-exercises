@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcMPG", "CalcMPG\CalcMPG.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliceWonderland", "AliceWonderland\AliceWonderland.csproj", "{B0CEBAD8-0B83-4EDC-9627-D923DE356F75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithStrings", "WorkingWithStrings\WorkingWithStrings.csproj", "{273864C3-AD6A-4A2E-9283-ADF3CFFBF091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{B0CEBAD8-0B83-4EDC-9627-D923DE356F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0CEBAD8-0B83-4EDC-9627-D923DE356F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0CEBAD8-0B83-4EDC-9627-D923DE356F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273864C3-AD6A-4A2E-9283-ADF3CFFBF091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273864C3-AD6A-4A2E-9283-ADF3CFFBF091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273864C3-AD6A-4A2E-9283-ADF3CFFBF091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273864C3-AD6A-4A2E-9283-ADF3CFFBF091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
