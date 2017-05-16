@@ -14,16 +14,35 @@ namespace HelloMVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            string html = "<form method='post'> <input type='text' name='name' /> <input type='submit' value='Greet me!' /></form>";
+            string html = "<form method='post'><input type='text' name='name' /><select name='lang'><option value='english'>English</option><option value='french'>French</option><option value='spanish'>Spanish</option><option value='russian'>Russian</option><option value='british'>British</option></select><input type='submit' value='Greet me!' /></form>";
 
             return Content(html, "text/html");
         }
 
         [Route("/Hello")]
         [HttpPost]
-        public IActionResult Display(string name = "World")
+        public IActionResult Display(string name = "World", string lang = "english")
         {
-            return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
+            string greeting = "";
+
+            if (lang.Equals("english"))
+            {
+                greeting = "Hello, ";
+            } else if (lang.Equals("russian"))
+            {
+                greeting = "Privyet, ";
+            } else if (lang.Equals("spanish"))
+            {
+                greeting = "Hola, ";
+            } else if (lang.Equals("french"))
+            {
+                greeting = "Bonjour, ";
+            } else if (lang.Equals("british"))
+            {
+                greeting = "Allo, ";
+            }
+
+            return Content(string.Format("<h1>{0}, {1}</h1>", greeting, name), "text/html");
         }
 
         //Handle requests to /Hello/NAME (URL segment)
@@ -39,8 +58,8 @@ namespace HelloMVC.Controllers
             return Redirect("/Hello/Aloha");
         }
 
-    // alter the route to the controller to be: /Hello/Aloha
-    [Route("/Hello/Aloha")]
+        // alter the route to the controller to be: /Hello/Aloha
+        [Route("/Hello/Aloha")]
         public IActionResult Goodbye()
         {
             return Content("Goodbye");
