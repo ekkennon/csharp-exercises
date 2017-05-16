@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using CheeseMVC.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,7 +12,7 @@ namespace CheeseMVC.Controllers
 {
     public class CheeseController : Controller
     {
-        private static Dictionary<string, string> Cheeses = new Dictionary<string, string>();
+        private static List<Cheese> Cheeses = new List<Cheese>();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -23,6 +24,10 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Index2()
         {
+            foreach (Cheese c in Cheeses)
+            {
+
+            }
             return View("Index");
         }
 
@@ -35,7 +40,10 @@ namespace CheeseMVC.Controllers
         [Route("/Cheese/Add")]
         public IActionResult NewCheese(string name, string desc)
         {
-            Cheeses.Add(name, desc);
+            Cheese c = new Cheese();
+            c.Name = name;
+            c.Desc = desc;
+            Cheeses.Add(c);
             return Redirect("/Cheese");
         }
     }

@@ -15,9 +15,9 @@
 }
 
 <ul>
-    @foreach (string cheese in ViewBag.Cheeses.Keys)
+    @foreach (CheeseMVC.Models.Cheese cheese in ViewBag.cheeses)
     {
-        <li>@cheese - @ViewBag.Cheeses[cheese]</li>
+        <li>@cheese.Name - @cheese.Desc</li>
     }
 
 </ul>
