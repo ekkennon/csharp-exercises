@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace School
+﻿namespace School
 {
-    class Student { 
+    abstract class Student { 
 
         private static int nextStudentId = 1;
         public int NumCredits { get; set; }
@@ -26,7 +20,6 @@ namespace School
 
         public Student(string name, int studentId) : this(name, studentId, 0, 0, 0)
         {
-
         }
 
         public Student(string name) : this(name, nextStudentId)
@@ -46,22 +39,7 @@ namespace School
             private set { qualityScore = value; }
         }
 
-        public string GetGradeLevel()
-        {
-            if (NumCredits < 30)
-            {
-                return "Freshman";
-            } else if (NumCredits < 60)
-            {
-                return "Sophomore";
-            } else if (NumCredits < 90)
-            {
-                return "Junior";
-            } else
-            {
-                return "Senior";
-            }
-        }
+        public abstract string GetGradeLevel();
 
         public void AddGrade(int courseCredits, double grade)
         {
@@ -108,6 +86,11 @@ namespace School
         public override string ToString()
         {
             return StudentID + " " + Name + " - " + GPA;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
