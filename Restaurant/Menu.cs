@@ -19,5 +19,25 @@ namespace Restaurant
         public Menu(string type) : this(new List<MenuItem>(), DateTime.Now, type)
         {
         }
+
+        public void addItem(MenuItem item)
+        {
+            Items.Add(item);
+        }
+
+        public void removeItem(MenuItem item)
+        {
+            Items.Remove(item);
+        }
+
+        public override string ToString()
+        {
+            string menu = "";
+            foreach (MenuItem item in Items)
+            {
+                menu += item.ToString() + "\n";
+            }
+            return menu;
+        }
     }
 }
