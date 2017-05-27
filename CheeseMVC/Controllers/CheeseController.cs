@@ -17,18 +17,8 @@ namespace CheeseMVC.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.cheeses = Cheeses;
-
+            ViewBag.cheeses = CheeseData.GetAll();
             return View();
-        }
-
-        public IActionResult Index2()
-        {
-            foreach (Cheese c in Cheeses)
-            {
-
-            }
-            return View("Index");
         }
 
         public IActionResult Add()
@@ -38,27 +28,31 @@ namespace CheeseMVC.Controllers
 
         [HttpPost]
         [Route("/Cheese/Add")]
-        public IActionResult NewCheese(string name, string desc)
+        public IActionResult NewCheese(Cheese cheese)
         {
-            Cheese c = new Cheese();
-            c.Name = name;
-            c.Desc = desc;
-            Cheeses.Add(c);
+            //Cheese c = new Cheese();
+            //c.Name = name;
+            //c.Desc = desc;
+            CheeseData.Add(cheese);
             return Redirect("/Cheese");
         }
 
         public IActionResult Remove()
         {
-            ViewBag.cheeses = Cheeses;
+            ViewBag.cheeses = CheeseData.GetAll();
             return View();
         }
 
         [HttpPost]
         [Route("/Cheese/Remove")]
-        public IActionResult RmCheese(string cheeseName)
+        public IActionResult RmCheese(int[] cheeseIds)
         {
-
-            Cheeses.Remove(Cheeses.Find(x => x.Name.Equals(cheeseName)));
+            //Cheeses.Remove(Cheeses.Find(x => x.Name.Equals(cheeseName)));
+            foreach (int cheeseId in cheeseIds)
+            {
+                //Cheeses.RemoveAll(c => c.CheeseId == cheeseId);
+                CheeseData.Remove(cheeseId);
+            }
             return Redirect("/Cheese");
         }
     }
