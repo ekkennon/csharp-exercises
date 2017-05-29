@@ -25,6 +25,13 @@ namespace CheeseMVC.Models
             cheeses.Remove(cheeseToRemove);
         }
 
+        public static void Edit(int id, string name, string desc)
+        {
+            Cheese editCheese = GetById(id);
+            editCheese.Name = name;
+            editCheese.Desc = desc;
+        }
+
         public static Cheese GetById(int id)
         {
             return cheeses.Single(c => c.CheeseId == id);

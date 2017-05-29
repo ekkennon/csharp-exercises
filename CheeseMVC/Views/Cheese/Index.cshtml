@@ -7,7 +7,8 @@
 
 <h1>My Cheeses</h1>
 
-<p><a asp-controller="Cheese" asp-action="Add">Add Cheese</a></p>
+<p><a asp-controller="Cheese" asp-action="Add">Add Cheese</a>
+<a asp-controller="Cheese" asp-action="Remove">Remove Cheese</a></p>
 
 @if (ViewBag.cheeses.Count == 0)
 {
@@ -17,7 +18,7 @@
 <ul>
     @foreach (CheeseMVC.Models.Cheese cheese in ViewBag.cheeses)
     {
-        <li>@cheese.Name - @cheese.Desc</li>
+        <li>@cheese.Name - @cheese.Desc <a asp-controller="Cheese" asp-action="Edit" asp-route-id="@cheese.CheeseId">Edit</a></li>
     }
 
 </ul>

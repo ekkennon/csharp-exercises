@@ -12,9 +12,6 @@ namespace CheeseMVC.Controllers
 {
     public class CheeseController : Controller
     {
-        private static List<Cheese> Cheeses = new List<Cheese>();
-
-        // GET: /<controller>/
         public IActionResult Index()
         {
             ViewBag.cheeses = CheeseData.GetAll();
@@ -30,9 +27,6 @@ namespace CheeseMVC.Controllers
         [Route("/Cheese/Add")]
         public IActionResult NewCheese(Cheese cheese)
         {
-            //Cheese c = new Cheese();
-            //c.Name = name;
-            //c.Desc = desc;
             CheeseData.Add(cheese);
             return Redirect("/Cheese");
         }
@@ -47,12 +41,23 @@ namespace CheeseMVC.Controllers
         [Route("/Cheese/Remove")]
         public IActionResult RmCheese(int[] cheeseIds)
         {
-            //Cheeses.Remove(Cheeses.Find(x => x.Name.Equals(cheeseName)));
             foreach (int cheeseId in cheeseIds)
             {
-                //Cheeses.RemoveAll(c => c.CheeseId == cheeseId);
                 CheeseData.Remove(cheeseId);
             }
+            return Redirect("/Cheese");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            ViewBag.editcheese = CheeseData.GetById(id);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, string name, string desc)
+        {
+            CheeseData.Edit(id, name, desc);
             return Redirect("/Cheese");
         }
     }
